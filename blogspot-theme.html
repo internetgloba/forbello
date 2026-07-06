@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForBello Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.6s ease;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            animation: fadeIn 0.8s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            animation: popIn 0.5s ease backwards;
+        }
+
+        nav button:nth-child(1) { animation-delay: 0.1s; }
+        nav button:nth-child(2) { animation-delay: 0.2s; }
+        nav button:nth-child(3) { animation-delay: 0.3s; }
+        nav button:nth-child(4) { animation-delay: 0.4s; }
+
+        nav button:hover {
+            background: var(--white);
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav button.active {
+            background: var(--white);
+            color: var(--secondary-color);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== PAGE TITLE ===== */
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary-color);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* ===== POSTS GRID ===== */
+        .posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .post-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            animation: scaleIn 0.6s ease backwards;
+        }
+
+        .post-card:nth-child(1) { animation-delay: 0.1s; }
+        .post-card:nth-child(2) { animation-delay: 0.2s; }
+        .post-card:nth-child(3) { animation-delay: 0.3s; }
+        .post-card:nth-child(4) { animation-delay: 0.4s; }
+        .post-card:nth-child(5) { animation-delay: 0.5s; }
+        .post-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .post-card:hover .post-image img {
+            transform: scale(1.1);
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .post-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .post-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .post-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* ===== MODAL / DETAIL POST ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            animation: fadeInRight 0.8s ease;
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .sidebar-item:hover {
+            padding-left: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .sidebar-item:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            animation: slideUp 0.6s ease;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .posts-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav button {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .modal-content {
+                margin: 20% auto;
+                padding: 1.5rem;
+                max-width: 90%;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-container {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .empty-state svg {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🚀 ForBello</div>
+            <nav>
+                <ul>
+                    <li><button class="nav-btn active" data-page="accueil">Accueil</button></li>
+                    <li><button class="nav-btn" data-page="tech">Technologie</button></li>
+                    <li><button class="nav-btn" data-page="lifestyle">Lifestyle</button></li>
+                    <li><button class="nav-btn" data-page="contact">Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h1 class="page-title" id="pageTitle">Accueil</h1>
+        
+        <!-- SEARCH BAR -->
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Rechercher un article...">
+            <button class="search-btn" id="searchBtn">Rechercher</button>
+        </div>
+
+        <!-- POSTS GRID -->
+        <div class="posts-container" id="postsContainer">
+            <!-- Posts seront générés ici par JavaScript -->
+        </div>
+    </div>
+
+    <!-- MODAL DETAIL -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Titre du Post</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Le contenu sera généré par JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h3>ForBello Blog</h3>
+            <p>Découvrez mes pensées sur la technologie, le lifestyle et bien plus encore.</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                <a href="#" class="social-icon" title="Facebook">f</a>
+                <a href="#" class="social-icon" title="Instagram">📷</a>
+                <a href="#" class="social-icon" title="LinkedIn">in</a>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">À propos</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <p>&copy; 2026 ForBello. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Données des posts par catégorie avec contenu complet
+        const posts = {
+            accueil: [
+                {
+                    id: 1,
+                    title: "Bienvenue sur mon blog",
+                    excerpt: "Découvrez mes derniers articles sur la technologie et le lifestyle.",
+                    content: "Je suis ravi de vous accueillir sur mon blog personnel. Ici, je partage mes réflexions, mes expériences et mes connaissances sur des sujets variés. N'hésitez pas à explorer les différentes sections et à me faire connaître vos retours!",
+                    date: "6 juillet 2026",
+                    category: "Actualités",
+                    emoji: "📝",
+                    author: "ForBello"
+                },
+                {
+                    id: 2,
+                    title: "Mon voyage en 2026",
+                    excerpt: "Un résumé de mes aventures et expériences cette année.",
+                    content: "Cette année a été riche en aventures! De la découverte de nouvelles cultures à la rencontre de personnes inspirantes, chaque jour a apporté son lot de surprises. Suivez mes aventures à travers ce blog.",
+                    date: "5 juillet 2026",
+                    category: "Lifestyle",
+                    emoji: "✈️",
+                    author: "ForBello"
+                },
+                {
+                    id: 3,
+                    title: "Les tendances tech actuelles",
+                    excerpt: "Explorer les innovations technologiques qui façonnent notre future.",
+                    content: "L'intelligence artificielle, la blockchain, et le développement web continuent à évoluer. Dans cet article, je vous propose une analyse des tendances les plus importantes de 2026.",
+                    date: "4 juillet 2026",
+                    category: "Technologie",
+                    emoji: "🔧",
+                    author: "ForBello"
+                }
+            ],
+            tech: [
+                {
+                    id: 4,
+                    title: "Guide complet JavaScript",
+                    excerpt: "Apprenez les concepts avancés de JavaScript et maîtrisez le langage.",
+                    content: "JavaScript est l'un des langages les plus puissants du web. Dans ce guide, nous couvrirons les closures, les promesses, async/await, et bien d'autres concepts essentiels pour devenir un expert.",
+                    date: "3 juillet 2026",
+                    category: "Tutoriel",
+                    emoji: "💻",
+                    author: "ForBello"
+                },
+                {
+                    id: 5,
+                    title: "Web Design moderne",
+                    excerpt: "Créer des interfaces utilisateur magnifiques et réactives.",
+                    content: "Le design web moderne repose sur des principes de UX/UI solides. Découvrez comment créer des interfaces magnifiques en utilisant les dernières techniques de CSS, animations et responsive design.",
+                    date: "2 juillet 2026",
+                    category: "Design",
+                    emoji: "🎨",
+                    author: "ForBello"
+                },
+                {
+                    id: 6,
+                    title: "API REST avec Node.js",
+                    excerpt: "Construire des APIs scalables et sécurisées.",
+                    content: "Node.js est parfait pour construire des APIs robustes. Apprenez comment créer une API REST complète avec authentication, validation de données, et gestion des erreurs.",
+                    date: "1 juillet 2026",
+                    category: "Backend",
+                    emoji: "⚙️",
+                    author: "ForBello"
+                }
+            ],
+            lifestyle: [
+                {
+                    id: 7,
+                    title: "Productivité quotidienne",
+                    excerpt: "Des conseils pratiques pour optimiser votre journée.",
+                    content: "La productivité n'est pas une question de faire plus, mais de faire mieux. Découvrez mes techniques éprouvées pour gérer votre temps et atteindre vos objectifs.",
+                    date: "30 juin 2026",
+                    category: "Conseils",
+                    emoji: "⏰",
+                    author: "ForBello"
+                },
+                {
+                    id: 8,
+                    title: "Nutrition et santé",
+                    excerpt: "Manger sainement sans se priver de plaisir.",
+                    content: "Manger sainement ne signifie pas renoncer aux aliments que vous aimez. Je vous partage mes recettes favorites et mes conseils pour maintenir un équilibre alimentaire.",
+                    date: "29 juin 2026",
+                    category: "Santé",
+                    emoji: "🥗",
+                    author: "ForBello"
+                },
+                {
+                    id: 9,
+                    title: "Découvrir le monde",
+                    excerpt: "Les destinations incontournables pour 2026.",
+                    content: "Le voyage enrichit l'âme. Explorez les plus belles destinations du monde et découvrez comment voyager intelligemment sans se ruiner.",
+                    date: "28 juin 2026",
+                    category: "Voyage",
+                    emoji: "🌍",
+                    author: "ForBello"
+                }
+            ],
+            contact: [
+                {
+                    id: 10,
+                    title: "Me contacter",
+                    excerpt: "Tous les moyens de communication pour collaborer ensemble.",
+                    content: "Je serais ravi de vous entendre! Vous pouvez me contacter par email à contact@forbello.com, ou via les réseaux sociaux. Je réponds généralement dans les 24 heures.",
+                    date: "Toujours disponible",
+                    category: "Contact",
+                    emoji: "📧",
+                    author: "ForBello"
+                }
+            ]
+        };
+
+        let currentPage = 'accueil';
+
+        // Fonction pour afficher les posts
+        function displayPosts(page, filteredPosts = null) {
+            const container = document.getElementById('postsContainer');
+            const pageTitle = document.getElementById('pageTitle');
+            const pagePosts = filteredPosts || posts[page] || [];
+
+            // Mettre à jour le titre
+            const titles = {
+                accueil: "Accueil",
+                tech: "Technologie",
+                lifestyle: "Lifestyle",
+                contact: "Contact"
+            };
+            pageTitle.textContent = titles[page];
+
+            // Afficher les posts
+            if (pagePosts.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>Aucun article trouvé.</p></div>';
+                return;
+            }
+
+            container.innerHTML = pagePosts.map((post, index) => `
+                <div class="post-card" style="animation-delay: ${index * 0.1}s">
+                    <div class="post-image">${post.emoji}</div>
+                    <div class="post-content">
+                        <span class="post-category">${post.category}</span>
+                        <h2 class="post-title">${post.title}</h2>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <div class="post-meta">
+                            <span class="post-date">📅 ${post.date}</span>
+                            <button class="read-more" onclick="openModal(${post.id})">Lire plus</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Fonction pour ouvrir le modal
+        function openModal(postId) {
+            const modal = document.getElementById('postModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            // Chercher le post dans toutes les catégories
+            let selectedPost = null;
+            for (let page in posts) {
+                const post = posts[page].find(p => p.id === postId);
+                if (post) {
+                    selectedPost = post;
+                    break;
+                }
+            }
+
+            if (selectedPost) {
+                modalTitle.textContent = selectedPost.title;
+                modalBody.innerHTML = `
+                    <div style="margin-bottom: 1.5rem;">
+                        <span class="post-category" style="display: inline-block; margin-bottom: 1rem;">${selectedPost.category}</span>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">
+                            Par <strong>${selectedPost.author}</strong> • ${selectedPost.date}
+                        </p>
+                    </div>
+                    <p style="line-height: 1.8; margin-bottom: 1.5rem;">${selectedPost.content}</p>
+                    <p style="padding-top: 1.5rem; border-top: 1px solid #e2e8f0; color: var(--text-light); font-size: 0.9rem;">
+                        Article publié le ${selectedPost.date}
+                    </p>
+                `;
+                modal.style.display = 'block';
+            }
+        }
+
+        // Fermer le modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('postModal').style.display = 'none';
+        });
+
+        // Fermer le modal en cliquant en dehors
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('postModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Ajouter les événements aux boutons de navigation
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Retirer la classe active
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                this.classList.add('active');
+                // Afficher les posts de la page
+                currentPage = this.dataset.page;
+                displayPosts(currentPage);
+                // Réinitialiser la recherche
+                document.getElementById('searchInput').value = '';
+            });
+        });
+
+        // Fonction de recherche
+        document.getElementById('searchBtn').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (!searchTerm) {
+                displayPosts(currentPage);
+                return;
+            }
+
+            // Chercher dans la page actuelle
+            const filteredPosts = posts[currentPage].filter(post =>
+                post.title.toLowerCase().includes(searchTerm) ||
+                post.excerpt.toLowerCase().includes(searchTerm) ||
+                post.category.toLowerCase().includes(searchTerm)
+            );
+
+            displayPosts(currentPage, filteredPosts);
+        }
+
+        // Afficher les posts de la page d'accueil au chargement
+        displayPosts('accueil');
+    </script>
+</body>
+</html>
