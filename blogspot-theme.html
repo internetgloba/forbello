@@ -1,13 +1,12 @@
-&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang='fr'&gt;
-&lt;head&gt;
-    &lt;meta charset='UTF-8'/&gt;
-    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'/&gt;
-    &lt;title&gt;ForBello Blog&lt;/title&gt;
-    &lt;!-- ADSENSE SCRIPT --&gt;
-    &lt;script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1814528515629923' crossorigin='anonymous'&gt;&lt;/script&gt;
-    &lt;style&gt;
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>ForBello Blog</title>
+    <!-- ADSENSE SCRIPT -->
+    <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1814528515629923' crossorigin='anonymous'></script>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +31,6 @@
             min-height: 100vh;
         }
 
-        /* ===== HEADER amp; NAVIGATION ===== */
         header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--white);
@@ -96,14 +94,12 @@
             color: var(--secondary-color);
         }
 
-        /* ===== MAIN CONTAINER ===== */
         .container {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 2rem;
         }
 
-        /* ===== PAGE TITLE ===== */
         .page-title {
             font-size: 2.5rem;
             margin-bottom: 2rem;
@@ -112,7 +108,6 @@
             animation: fadeInUp 0.8s ease;
         }
 
-        /* ===== AD CONTAINER ===== */
         .ad-container {
             background: var(--white);
             padding: 1.5rem;
@@ -131,7 +126,6 @@
             font-weight: 600;
         }
 
-        /* ===== POSTS GRID ===== */
         .posts-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -247,7 +241,6 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* ===== MODAL / DETAIL POST ===== */
         .modal {
             display: none;
             position: fixed;
@@ -312,7 +305,6 @@
             text-align: center;
         }
 
-        /* ===== FOOTER ===== */
         footer {
             background: var(--text-dark);
             color: var(--white);
@@ -372,7 +364,30 @@
             transform: translateY(-3px);
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* ===== DESIGN BY MOUNIR WATERMARK ===== */
+        .design-credit {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            z-index: 999;
+            animation: slideInRight 0.8s ease;
+            transition: var(--transition);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .design-credit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -392,6 +407,17 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
 
@@ -437,7 +463,6 @@
             }
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .page-title {
                 font-size: 1.8rem;
@@ -471,9 +496,15 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .design-credit {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 15px;
+                font-size: 0.75rem;
+            }
         }
 
-        /* ===== SEARCH BAR ===== */
         .search-container {
             margin: 2rem 0;
             display: flex;
@@ -510,118 +541,106 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* ===== EMPTY STATE ===== */
         .empty-state {
             text-align: center;
             padding: 3rem;
             color: var(--text-light);
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- HEADER amp; NAVIGATION --&gt;
-    &lt;header&gt;
-        &lt;div class='header-container'&gt;
-            &lt;div class='logo'&gt;ForBello&lt;/div&gt;
-            &lt;nav&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;button class='nav-btn active' data-page='accueil'&gt;Accueil&lt;/button&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;button class='nav-btn' data-page='tech'&gt;Technologie&lt;/button&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;button class='nav-btn' data-page='lifestyle'&gt;Lifestyle&lt;/button&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;button class='nav-btn' data-page='contact'&gt;Contact&lt;/button&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/nav&gt;
-        &lt;/div&gt;
-    &lt;/header&gt;
+    </style>
+</head>
+<body>
+    <header>
+        <div class='header-container'>
+            <div class='logo'>ForBello</div>
+            <nav>
+                <ul>
+                    <li><button class='nav-btn active' data-page='accueil'>Accueil</button></li>
+                    <li><button class='nav-btn' data-page='tech'>Technologie</button></li>
+                    <li><button class='nav-btn' data-page='lifestyle'>Lifestyle</button></li>
+                    <li><button class='nav-btn' data-page='contact'>Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    &lt;!-- MAIN CONTENT --&gt;
-    &lt;div class='container'&gt;
-        &lt;h1 class='page-title' id='pageTitle'&gt;Accueil&lt;/h1&gt;
+    <div class='container'>
+        <h1 class='page-title' id='pageTitle'>Accueil</h1>
         
-        &lt;!-- AD UNIT 1 - TOP --&gt;
-        &lt;div class='ad-container'&gt;
-            &lt;div class='ad-label'&gt;Publicité&lt;/div&gt;
-            &lt;ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='1234567890' data-ad-format='auto' data-full-width-responsive='true'&gt;&lt;/ins&gt;
-        &lt;/div&gt;
+        <div class='ad-container'>
+            <div class='ad-label'>Publicite</div>
+            <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='1234567890' data-ad-format='auto' data-full-width-responsive='true'></ins>
+        </div>
 
-        &lt;!-- SEARCH BAR --&gt;
-        &lt;div class='search-container'&gt;
-            &lt;input type='text' class='search-input' id='searchInput' placeholder='Rechercher un article...'/&gt;
-            &lt;button class='search-btn' id='searchBtn'&gt;Rechercher&lt;/button&gt;
-        &lt;/div&gt;
+        <div class='search-container'>
+            <input type='text' class='search-input' id='searchInput' placeholder='Rechercher un article...'/>
+            <button class='search-btn' id='searchBtn'>Rechercher</button>
+        </div>
 
-        &lt;!-- POSTS GRID --&gt;
-        &lt;div class='posts-container' id='postsContainer'&gt;
-            &lt;!-- Posts seront generés ici par JavaScript --&gt;
-        &lt;/div&gt;
+        <div class='posts-container' id='postsContainer'></div>
 
-        &lt;!-- AD UNIT 2 - BOTTOM --&gt;
-        &lt;div class='ad-container'&gt;
-            &lt;div class='ad-label'&gt;Publicité&lt;/div&gt;
-            &lt;ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='0987654321' data-ad-format='auto' data-full-width-responsive='true'&gt;&lt;/ins&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+        <div class='ad-container'>
+            <div class='ad-label'>Publicite</div>
+            <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='0987654321' data-ad-format='auto' data-full-width-responsive='true'></ins>
+        </div>
+    </div>
 
-    &lt;!-- MODAL DETAIL --&gt;
-    &lt;div class='modal' id='postModal'&gt;
-        &lt;div class='modal-content'&gt;
-            &lt;div class='modal-header'&gt;
-                &lt;h2 class='modal-title' id='modalTitle'&gt;Titre du Post&lt;/h2&gt;
-                &lt;button class='close-btn' id='closeModal'&gt;&amp;times;&lt;/button&gt;
-            &lt;/div&gt;
-            &lt;div class='modal-body' id='modalBody'&gt;
-                &lt;!-- Le contenu sera generé par JavaScript --&gt;
-            &lt;/div&gt;
-            &lt;!-- AD UNIT 3 - MODAL --&gt;
-            &lt;div class='modal-ads'&gt;
-                &lt;div class='ad-label'&gt;Publicité&lt;/div&gt;
-                &lt;ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='1111111111' data-ad-format='auto' data-full-width-responsive='true'&gt;&lt;/ins&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+    <div class='modal' id='postModal'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h2 class='modal-title' id='modalTitle'>Titre du Post</h2>
+                <button class='close-btn' id='closeModal'>X</button>
+            </div>
+            <div class='modal-body' id='modalBody'></div>
+            <div class='modal-ads'>
+                <div class='ad-label'>Publicite</div>
+                <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-1814528515629923' data-ad-slot='1111111111' data-ad-format='auto' data-full-width-responsive='true'></ins>
+            </div>
+        </div>
+    </div>
 
-    &lt;!-- FOOTER --&gt;
-    &lt;footer&gt;
-        &lt;div class='footer-content'&gt;
-            &lt;h3&gt;ForBello Blog&lt;/h3&gt;
-            &lt;p&gt;Découvrez mes pensées sur la technologie, le lifestyle et bien plus encore.&lt;/p&gt;
+    <!-- DESIGN BY MOUNIR WATERMARK -->
+    <div class='design-credit'>Design by Mounir</div>
+
+    <footer>
+        <div class='footer-content'>
+            <h3>ForBello Blog</h3>
+            <p>Decouvrez mes pensees sur la technologie, le lifestyle et bien plus encore.</p>
             
-            &lt;div class='social-icons'&gt;
-                &lt;a href='#' class='social-icon' title='Twitter'&gt;X&lt;/a&gt;
-                &lt;a href='#' class='social-icon' title='Facebook'&gt;f&lt;/a&gt;
-                &lt;a href='#' class='social-icon' title='Instagram'&gt;📷&lt;/a&gt;
-                &lt;a href='#' class='social-icon' title='LinkedIn'&gt;in&lt;/a&gt;
-            &lt;/div&gt;
+            <div class='social-icons'>
+                <a href='#' class='social-icon' title='Twitter'>X</a>
+                <a href='#' class='social-icon' title='Facebook'>f</a>
+                <a href='#' class='social-icon' title='Instagram'>I</a>
+                <a href='#' class='social-icon' title='LinkedIn'>in</a>
+            </div>
 
-            &lt;div class='footer-links'&gt;
-                &lt;a href='#'&gt;À propos&lt;/a&gt;
-                &lt;a href='#'&gt;Politique de confidentialité&lt;/a&gt;
-                &lt;a href='#'&gt;Conditions d'utilisation&lt;/a&gt;
-                &lt;a href='#'&gt;Contact&lt;/a&gt;
-            &lt;/div&gt;
+            <div class='footer-links'>
+                <a href='#'>A propos</a>
+                <a href='#'>Politique de confidentialite</a>
+                <a href='#'>Conditions d\'utilisation</a>
+                <a href='#'>Contact</a>
+            </div>
 
-            &lt;p&gt;© 2026 ForBello. Tous droits réservés.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/footer&gt;
+            <p>Copyright 2026 ForBello. Tous droits reserves.</p>
+        </div>
+    </footer>
 
-    &lt;script type='text/javascript'&gt;
-        &lt;![CDATA[
+    <script type='text/javascript'>
         var posts = {
             accueil: [
                 {
                     id: 1,
                     title: "Bienvenue sur mon blog",
-                    excerpt: "Découvrez mes derniers articles sur la technologie et le lifestyle.",
-                    content: "Je suis ravi de vous accueillir sur mon blog personnel. Ici, je partage mes réflexions, mes expériences et mes connaissances sur des sujets variés.",
+                    excerpt: "Decouvrez mes derniers articles sur la technologie et le lifestyle.",
+                    content: "Je suis ravi de vous accueillir sur mon blog personnel. Ici, je partage mes reflexions, mes experiences et mes connaissances sur des sujets varies.",
                     date: "6 juillet 2026",
-                    category: "Actualités",
+                    category: "Actualites",
                     author: "ForBello"
                 },
                 {
                     id: 2,
                     title: "Mon voyage en 2026",
-                    excerpt: "Un résumé de mes aventures et expériences cette année.",
-                    content: "Cette année a été riche en aventures! De la découverte de nouvelles cultures à la rencontre de personnes inspirantes.",
+                    excerpt: "Un resume de mes aventures et experiences cette annee.",
+                    content: "Cette annee a ete riche en aventures! De la decouverte de nouvelles cultures a la rencontre de personnes inspirantes.",
                     date: "5 juillet 2026",
                     category: "Lifestyle",
                     author: "ForBello"
@@ -629,8 +648,8 @@
                 {
                     id: 3,
                     title: "Les tendances tech actuelles",
-                    excerpt: "Explorer les innovations technologiques qui façonnent notre future.",
-                    content: "L'intelligence artificielle, la blockchain, et le développement web continuent à évoluer.",
+                    excerpt: "Explorer les innovations technologiques qui facconnent notre future.",
+                    content: "L'intelligence artificielle, la blockchain, et le developpement web continuent a evoluer.",
                     date: "4 juillet 2026",
                     category: "Technologie",
                     author: "ForBello"
@@ -640,7 +659,7 @@
                 {
                     id: 4,
                     title: "Guide complet JavaScript",
-                    excerpt: "Apprenez les concepts avancés de JavaScript et maîtrisez le langage.",
+                    excerpt: "Apprenez les concepts avances de JavaScript et maitrisez le langage.",
                     content: "JavaScript est l'un des langages les plus puissants du web.",
                     date: "3 juillet 2026",
                     category: "Tutoriel",
@@ -649,7 +668,7 @@
                 {
                     id: 5,
                     title: "Web Design moderne",
-                    excerpt: "Créer des interfaces utilisateur magnifiques et réactives.",
+                    excerpt: "Creer des interfaces utilisateur magnifiques et reactives.",
                     content: "Le design web moderne repose sur des principes de UX/UI solides.",
                     date: "2 juillet 2026",
                     category: "Design",
@@ -658,7 +677,7 @@
                 {
                     id: 6,
                     title: "API REST avec Node.js",
-                    excerpt: "Construire des APIs scalables et sécurisées.",
+                    excerpt: "Construire des APIs scalables et securisees.",
                     content: "Node.js est parfait pour construire des APIs robustes.",
                     date: "1 juillet 2026",
                     category: "Backend",
@@ -668,27 +687,27 @@
             lifestyle: [
                 {
                     id: 7,
-                    title: "Productivité quotidienne",
-                    excerpt: "Des conseils pratiques pour optimiser votre journée.",
-                    content: "La productivité n'est pas une question de faire plus, mais de faire mieux.",
+                    title: "Productivite quotidienne",
+                    excerpt: "Des conseils pratiques pour optimiser votre journee.",
+                    content: "La productivite n'est pas une question de faire plus, mais de faire mieux.",
                     date: "30 juin 2026",
                     category: "Conseils",
                     author: "ForBello"
                 },
                 {
                     id: 8,
-                    title: "Nutrition et santé",
+                    title: "Nutrition et sante",
                     excerpt: "Manger sainement sans se priver de plaisir.",
                     content: "Manger sainement ne signifie pas renoncer aux aliments que vous aimez.",
                     date: "29 juin 2026",
-                    category: "Santé",
+                    category: "Sante",
                     author: "ForBello"
                 },
                 {
                     id: 9,
-                    title: "Découvrir le monde",
+                    title: "Decouvrir le monde",
                     excerpt: "Les destinations incontournables pour 2026.",
-                    content: "Le voyage enrichit l'âme. Explorez les plus belles destinations.",
+                    content: "Le voyage enrichit l'ame. Explorez les plus belles destinations.",
                     date: "28 juin 2026",
                     category: "Voyage",
                     author: "ForBello"
@@ -723,16 +742,16 @@
             pageTitle.textContent = titles[page];
 
             if (pagePosts.length === 0) {
-                container.innerHTML = '&lt;div class="empty-state"&gt;&lt;p&gt;Aucun article trouvé.&lt;/p&gt;&lt;/div&gt;';
+                container.innerHTML = '<div class="empty-state"><p>Aucun article trouve.</p></div>';
                 return;
             }
 
             var postsHTML = '';
             pagePosts.forEach(function(post, index) {
-                postsHTML += '&lt;div class="post-card" style="animation-delay: ' + (index * 0.1) + 's"&gt;&lt;div class="post-image"&gt;&amp;#9999;&lt;/div&gt;&lt;div class="post-content"&gt;&lt;span class="post-category"&gt;' + post.category + '&lt;/span&gt;&lt;h2 class="post-title"&gt;' + post.title + '&lt;/h2&gt;&lt;p class="post-excerpt"&gt;' + post.excerpt + '&lt;/p&gt;&lt;div class="post-meta"&gt;&lt;span class="post-date"&gt;📅 ' + post.date + '&lt;/span&gt;&lt;button class="read-more" onclick="openModal(' + post.id + ')"&gt;Lire plus&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
+                postsHTML += '<div class="post-card" style="animation-delay: ' + (index * 0.1) + 's"><div class="post-image">*</div><div class="post-content"><span class="post-category">' + post.category + '</span><h2 class="post-title">' + post.title + '</h2><p class="post-excerpt">' + post.excerpt + '</p><div class="post-meta"><span class="post-date">Date: ' + post.date + '</span><button class="read-more" onclick="openModal(' + post.id + ')">Lire plus</button></div></div></div>';
                 
                 if ((index + 1) % 2 === 0 && index + 1 !== pagePosts.length) {
-                    postsHTML += '&lt;div class="ad-container" style="grid-column: 1 / -1;"&gt;&lt;div class="ad-label"&gt;Publicité&lt;/div&gt;&lt;ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1814528515629923" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"&gt;&lt;/ins&gt;&lt;/div&gt;';
+                    postsHTML += '<div class="ad-container" style="grid-column: 1 / -1;"><div class="ad-label">Publicite</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1814528515629923" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>';
                 }
             });
 
@@ -759,7 +778,7 @@
 
             if (selectedPost) {
                 modalTitle.textContent = selectedPost.title;
-                modalBody.innerHTML = '&lt;div style="margin-bottom: 1.5rem;"&gt;&lt;span class="post-category" style="display: inline-block; margin-bottom: 1rem;"&gt;' + selectedPost.category + '&lt;/span&gt;&lt;p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;"&gt;Par &lt;strong&gt;' + selectedPost.author + '&lt;/strong&gt; • ' + selectedPost.date + '&lt;/p&gt;&lt;/div&gt;&lt;p style="line-height: 1.8; margin-bottom: 1.5rem;"&gt;' + selectedPost.content + '&lt;/p&gt;&lt;p style="padding-top: 1.5rem; border-top: 1px solid #e2e8f0; color: var(--text-light); font-size: 0.9rem;"&gt;Article publié le ' + selectedPost.date + '&lt;/p&gt;';
+                modalBody.innerHTML = '<div style="margin-bottom: 1.5rem;"><span class="post-category" style="display: inline-block; margin-bottom: 1rem;">' + selectedPost.category + '</span><p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">Par <strong>' + selectedPost.author + '</strong> - ' + selectedPost.date + '</p></div><p style="line-height: 1.8; margin-bottom: 1.5rem;">' + selectedPost.content + '</p><p style="padding-top: 1.5rem; border-top: 1px solid #e2e8f0; color: var(--text-light); font-size: 0.9rem;">Article publie le ' + selectedPost.date + '</p>';
                 modal.style.display = 'block';
                 
                 if (window.adsbygoogle) {
@@ -815,7 +834,6 @@
         if (window.adsbygoogle) {
             (adsbygoogle = window.adsbygoogle || []).push({});
         }
-        ]]&gt;
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    </script>
+</body>
+</html>
