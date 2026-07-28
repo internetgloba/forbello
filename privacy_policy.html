@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Puzzle Kids</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #2C3E50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        .header .emoji { font-size: 48px; margin-bottom: 10px; }
+        .header .date { color: #999; font-size: 14px; }
+        h2 {
+            color: #667eea;
+            font-size: 20px;
+            margin: 25px 0 12px;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+        }
+        p, li { font-size: 15px; color: #555; margin-bottom: 8px; }
+        ul { padding-left: 20px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+        .info-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .warning-box {
+            background: #fff8e1;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 15px 0;
+            border-left: 4px solid #FFC107;
+        }
+        .contact {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact a { color: #FFD700; text-decoration: none; }
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            padding: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="emoji">🔒</div>
+                <h1>Politique de Confidentialité</h1>
+                <p><strong>Puzzle Kids</strong> — Com.Kidspuzzle.Puzzle</p>
+                <p class="date">Dernière mise à jour : 28 juillet 2026</p>
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>Bienvenue dans <strong>Puzzle Kids</strong>, un jeu de casse-tête amusant et éducatif destiné aux enfants. Nous nous engageons à protéger la vie privée de nos utilisateurs, en particulier celle des enfants. Cette politique de confidentialité explique quelles informations nous collectons, comment nous les utilisons et quels droits vous avez.</p>
+
+            <h2>2. Informations collectées</h2>
+
+            <h3>2.1 Données collectées automatiquement</h3>
+            <div class="info-box">
+                <strong>Appareil :</strong> Nous détectons automatiquement la taille de l'écran, le ratio de pixels et le type d'appareil (téléphone/tablette) pour adapter l'affichage du jeu. <em>Ces informations ne sont pas stockées ni transmises.</em>
+            </div>
+            <ul>
+                <li><strong>Données de jeu locales :</strong> Progression des niveaux, étoiles gagnées, scores, paramètres (son, vibration) — stockés localement sur votre appareil via SharedPreferences.</li>
+                <li><strong>Données de jeu multijoueur :</strong> Pseudonyme de la salle, nombre de coups, temps de jeu, statut de complétion — stockés temporairement dans Firebase Realtime Database pendant la session de jeu en ligne uniquement.</li>
+            </ul>
+
+            <h3>2.2 Services tiers</h3>
+            <ul>
+                <li><strong>Google Play Games Services :</strong> Classements et succès. Google peut collecter des données conformément à sa propre politique de confidentialité.</li>
+                <li><strong>Firebase (Google) :</strong> Utilisé pour le multijoueur en temps réel. Les données de salle sont automatiquement supprimées après la session.</li>
+            </ul>
+
+            <h3>2.3 Aucune donnée collectée</h3>
+            <div class="warning-box">
+                <strong>Nous ne collectons PAS :</strong>
+                <ul>
+                    <li>Nom, adresse e-mail ou informations personnelles d'identification</li>
+                    <li>Coordonnées GPS ou localisation</li>
+                    <li>Contacts ou carnet d'adresses</li>
+                    <li>Photos, vidéos ou fichiers</li>
+                    <li>Données financières ou de paiement</li>
+                    <li>Données de navigation ou historique web</li>
+                    <li>Identifiants publicitaires</li>
+                </ul>
+            </div>
+
+            <h2>3. Utilisation des données</h2>
+            <p>Les données collectées sont utilisées exclusivement pour :</p>
+            <ul>
+                <li>🎯 Fournir et améliorer l'expérience de jeu</li>
+                <li>🏆 Permettre le classement et les succès via Google Play Games</li>
+                <li>🌐 Permettre le jeu multijoueur en ligne via Firebase</li>
+                <li>📱 Adapter l'affichage à votre appareil</li>
+                <li>⚙️ Sauvegarder vos préférences et progression</li>
+            </ul>
+
+            <h2>4. Partage des données</h2>
+            <p><strong>Nous ne vendons, ne louons et ne partageons aucune donnée personnelle avec des tiers</strong>, sauf :</p>
+            <ul>
+                <li>Les services Google nécessaires au fonctionnement de l'application (Play Games, Firebase)</li>
+                <li>Si requis par la loi ou pour protéger nos droits légaux</li>
+            </ul>
+
+            <h2>5. Sécurité des données</h2>
+            <p>Nous prenons des mesures raisonnables pour protéger vos données :</p>
+            <ul>
+                <li>Les données de jeu multijoueur sont stockées dans des salles Firebase temporaires et supprimées après la session</li>
+                <li>Aucune donnée sensible n'est chiffrée car aucune donnée personnelle n'est collectée</li>
+                <li>Les communications utilisent des connexions sécurisées (HTTPS/TLS)</li>
+            </ul>
+
+            <h2>6. Protection des enfants</h2>
+            <p>Puzzle Kids est conçu pour les enfants de 8 à 12 ans. Nous respectons les lois de protection des données des enfants (COPPIA, RGPD) :</p>
+            <ul>
+                <li>Nous ne collectons aucune information personnelle des enfants</li>
+                <li>Nous ne permettons pas la communication entre enfants (le nom de salle est généré automatiquement)</li>
+                <li>Nous ne diffusons aucune publicité ciblée</li>
+                <li>Aucun achat intégré (in-app purchase) n'est disponible</li>
+            </ul>
+
+            <h2>7. Vos droits</h2>
+            <p>Conformément au RGPD et aux lois applicables, vous avez le droit de :</p>
+            <ul>
+                <li>Accéder à vos données personnelles</li>
+                <li>Demander la suppression de vos données</li>
+                <li>Vous opposer au traitement de vos données</li>
+                <li>Retirer votre consentement à tout moment</li>
+            </ul>
+            <p>Pour exercer ces droits, contactez-nous via les informations ci-dessous.</p>
+
+            <h2>8. Suppression des données</h2>
+            <p>Pour supprimer toutes vos données :</p>
+            <ul>
+                <li><strong>Données locales :</strong> Désinstallez l'application depuis votre appareil</li>
+                <li><strong>Données multijoueur :</strong> Elles sont automatiquement supprimées de Firebase après la fin de la session de jeu</li>
+                <li><strong>Données Google Play Games :</strong> Gérez via les paramètres de votre compte Google</li>
+            </ul>
+
+            <h2>9. Modifications de cette politique</h2>
+            <p>Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Toute modification sera publiée sur cette page avec une date de mise à jour révisée. Nous vous encourageons à consulter régulièrement cette page.</p>
+
+            <h2>10. Contact</h2>
+            <div class="contact">
+                <p>📧 <strong>Questions ou préoccupations ?</strong></p>
+                <p><a href="mailto:contact@kidspuzzle.com">contact@kidspuzzle.com</a></p>
+                <p style="margin-top:10px; font-size:13px; opacity:0.8;">Ou ouvrez un ticket sur <a href="https://github.com/anomalyco/opencode/issues" target="_blank">GitHub Issues</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Puzzle Kids — Tous droits réservés</p>
+            <p>Politique de confidentialité v1.0</p>
+        </div>
+    </div>
+</body>
+</html>
