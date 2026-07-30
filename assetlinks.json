@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kalitools",
+      "sha256_cert_fingerprints":
+        ["91:8E:70:FC:73:33:50:87:52:3C:F9:3C:B6:0B:B1:0C:85:CC:E3:29:95:22:ED:A4:95:87:FA:4F:88:19:A7:56"]
+    }
+  }
+]
