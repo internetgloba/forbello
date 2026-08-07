@@ -1,74 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NIRdroid Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — DNIRVPN</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; background: #f9f9f9; }
-  h1, h2 { color: #1a1a2e; }
-  h1 { border-bottom: 2px solid #FFD700; padding-bottom: 10px; }
-  .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-  .updated { color: #666; font-style: italic; }
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; max-width: 780px; margin: 40px auto; padding: 0 20px; color: #1a1c2b; }
+  h1, h2 { color: #3045B8; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 32px 0; }
+  code { background: #f2f3f8; padding: 2px 6px; border-radius: 4px; }
 </style>
 </head>
 <body>
-<div class="container">
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: July 2026</p>
 
-<h2>Introduction</h2>
-<p>NIRdroid ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application (the "App").</p>
+<h1>Politique de confidentialité — DNIRVPN</h1>
+<p><em>Dernière mise à jour : 7 août 2026</em></p>
 
-<h2>Information We Collect</h2>
-<p>NIRdroid is a security toolkit that operates primarily offline. We collect the minimum information necessary to provide our services:</p>
+<hr>
+
+<h2>Français</h2>
+<p>Cette politique de confidentialité décrit comment l'application mobile <strong>DNIRVPN</strong> (l'« Application ») traite vos données. En utilisant l'Application, vous acceptez les pratiques décrites ci-dessous.</p>
+
+<h3>1. Données collectées</h3>
+<p>L'Application est un client VPN. Elle <strong>ne collecte pas</strong>, ne vend et ne partage aucune donnée personnelle à des fins publicitaires ou de revente. Elle ne contient aucun SDK publicitaire ni outil d'analyse de suivi. Concrètement :</p>
 <ul>
-  <li><strong>Network Information:</strong> When you use network tools (ping, traceroute, port scanning), we process the IP addresses and domains you specify. This data is processed locally on your device.</li>
-  <li><strong>API Data:</strong> When you use OSINT, IP geolocation, or other online features, we may send your specified target (domain, IP, phone number) to third-party APIs you configure. No data is stored by us.</li>
-  <li><strong>Device Information:</strong> We may collect anonymous crash reports and device model information to improve app stability.</li>
+  <li><strong>Historique de connexion</strong> (serveur utilisé, heure de connexion/déconnexion, durée, volume de données) : stocké <strong>localement sur votre appareil</strong> uniquement, et effaçable à tout moment depuis l'écran « Historique ». Rien n'est envoyé à nos serveurs.</li>
+  <li><strong>Préférences</strong> (langue, mode VPN, blocage publicitaire, serveurs favoris) : stockées localement sur votre appareil.</li>
+  <li><strong>Adresses IP et trafic réseau</strong> : les adresses IP et le trafic transitent par le tunnel VPN vers les serveurs auxquels vous vous connectez. DNIRVPN applique une politique <strong>no-logs</strong> : le contenu de votre trafic et votre adresse IP ne sont ni enregistrés, ni analysés, ni partagés par l'Application.</li>
+  <li><strong>Aucun compte</strong> : aucune inscription, aucun e-mail, aucun numéro de téléphone n'est demandé.</li>
 </ul>
 
-<h2>How We Use Your Information</h2>
+<h3>2. Permissions utilisées</h3>
 <ul>
-  <li>To provide the security and network analysis services you request</li>
-  <li>To improve app functionality and user experience</li>
-  <li>To diagnose and fix technical issues</li>
+  <li><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code> / <code>ACCESS_WIFI_STATE</code> : établir et surveiller la connexion VPN.</li>
+  <li><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SYSTEM_EXEMPTED</code> : maintenir le tunnel actif en arrière-plan.</li>
+  <li><code>POST_NOTIFICATIONS</code> : afficher la notification d'état du VPN.</li>
+  <li><code>RECEIVE_BOOT_COMPLETED</code> : rétablir la connexion après le redémarrage de l'appareil, si vous l'avez demandé.</li>
 </ul>
 
-<h2>Third-Party Services</h2>
-<p>NIRdroid may integrate with third-party APIs that you explicitly configure:</p>
+<h3>3. Stockage et sécurité</h3>
+<p>Les données de l'Application sont conservées dans une base de données locale sur votre appareil, protégée par l'environnement sécurisé du système (sandbox et chiffrement de l'appareil). Le tunnel VPN chiffre votre connexion en transit. Aucune donnée d'historique n'est transmise à un serveur tiers.</p>
+
+<h3>4. Partage des données</h3>
+<p>DNIRVPN ne vend, ne loue et ne divulgue pas vos données personnelles, sauf si la loi l'exige ou en cas de demande légale dûment autorisée.</p>
+
+<h3>5. Conservation et suppression</h3>
+<p>Les données locales restent sur votre appareil. Vous pouvez effacer l'historique de connexion à tout moment depuis l'application, ou désinstaller l'Application pour supprimer toutes les données stockées localement.</p>
+
+<h3>6. Droits des utilisateurs</h3>
+<p>Conformément à la législation applicable (notamment le RGPD), vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Comme aucune donnée personnelle n'est collectée par nos serveurs, la totalité de vos données est sous votre contrôle direct sur votre appareil.</p>
+
+<h3>7. Contact</h3>
+<p>Pour toute question relative à cette politique : <a href="mailto:forbello6@gmail.com">forbello6@gmail.com</a></p>
+
+<hr>
+
+<h2>English</h2>
+<p>This privacy policy describes how the mobile application <strong>DNIRVPN</strong> (the "App") handles your data. By using the App, you agree to the practices described below.</p>
+
+<h3>1. Data collected</h3>
+<p>The App is a VPN client. It does <strong>not</strong> collect, sell or share any personal data for advertising or resale purposes. It contains no advertising SDK or tracking analytics. Specifically:</p>
 <ul>
-  <li>IP Geolocation services (ip-api.com, etc.)</li>
-  <li>Phone number lookup services (numverify, abstractapi, veriphone)</li>
-  <li>Certificate transparency (crt.sh)</li>
-  <li>Have I Been Pwned (HIBP)</li>
-  <li>Shodan, CVE services, and others you choose to enable</li>
+  <li><strong>Connection history</strong> (server used, connection/disconnection time, duration, data volume): stored <strong>locally on your device</strong> only, and erasable anytime from the History screen. Nothing is sent to our servers.</li>
+  <li><strong>Preferences</strong> (language, VPN mode, ad blocking, favorite servers): stored locally on your device.</li>
+  <li><strong>IP addresses and network traffic</strong>: IP addresses and traffic transit through the VPN tunnel to the servers you connect to. DNIRVPN applies a strict <strong>no-logs policy</strong>: the content of your traffic and your IP address are neither logged, nor analysed, nor shared by the App.</li>
+  <li><strong>No account</strong>: no sign-up, no email, no phone number is required.</li>
 </ul>
-<p>Each of these services has its own privacy policy. You control which APIs to enable and what data to send.</p>
 
-<h2>Data Storage</h2>
-<p>All API keys are stored locally on your device using Android SharedPreferences. We do not transmit or store your API keys on our servers. No personal data is collected or stored by us.</p>
-
-<h2>Permissions</h2>
-<p>The App requires the following permissions:</p>
+<h3>2. Permissions used</h3>
 <ul>
-  <li><strong>Internet:</strong> To perform network scans and API lookups</li>
-  <li><strong>Location (Wi-Fi):</strong> To scan nearby Wi-Fi networks</li>
-  <li><strong>Vibrate:</strong> For user feedback</li>
+  <li><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code> / <code>ACCESS_WIFI_STATE</code>: to establish and monitor the VPN connection.</li>
+  <li><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SYSTEM_EXEMPTED</code>: to keep the tunnel active in the background.</li>
+  <li><code>POST_NOTIFICATIONS</code>: to display the VPN status notification.</li>
+  <li><code>RECEIVE_BOOT_COMPLETED</code>: to restore the connection after device restart, if requested.</li>
 </ul>
 
-<h2>Children's Privacy</h2>
-<p>Our App is not intended for children under 13. We do not knowingly collect data from children.</p>
+<h3>3. Storage and security</h3>
+<p>App data is kept in a local database on your device, protected by the system sandbox and device encryption. The VPN tunnel encrypts your connection in transit. No history data is transmitted to any third-party server.</p>
 
-<h2>Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. We will notify you of changes by updating the "Last updated" date.</p>
+<h3>4. Data sharing</h3>
+<p>DNIRVPN does not sell, rent or disclose your personal data, except where required by law or upon duly authorised legal request.</p>
 
-<h2>Contact Us</h2>
-<p>If you have questions about this Privacy Policy, please contact us at:</p>
-<p><strong>Email:</strong> privacy@nirdroid.app</p>
+<h3>5. Retention and deletion</h3>
+<p>Local data stays on your device. You may clear the connection history from the app at any time, or uninstall the App to delete all locally stored data.</p>
 
-<h2>Data Deletion</h2>
-<p>All app data is stored locally. To delete your data, uninstall the app or clear app data via Android Settings > Apps > NIRdroid > Storage > Clear Data.</p>
-</div>
+<h3>6. User rights</h3>
+<p>Under applicable law (including the GDPR), you have rights of access, rectification and erasure. Since no personal data is collected by our servers, all your data remains under your direct control on your device.</p>
+
+<h3>7. Contact</h3>
+<p>For any question regarding this policy: <a href="mailto:forbello6@gmail.com">forbello6@gmail.com</a></p>
+
+<hr>
+
+<h2 dir="rtl">العربية</h2>
+<p dir="rtl">تصف سياسة الخصوصية هذه كيفية تعامل تطبيق الجوال <strong>DNIRVPN</strong> (« التطبيق ») مع بياناتك. باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة أدناه.</p>
+
+<h3 dir="rtl">1. البيانات التي يتم جمعها</h3>
+<p dir="rtl">التطبيق هو عميل VPN. وهو <strong>لا يجمع</strong> ولا يبيع ولا يشارك أي بيانات شخصية لأغراض إعلانية أو إعادة بيع. ولا يحتوي على أي وحدات إعلانية أو أدوات تحليل وتتبع. على وجه التحديد:</p>
+<ul dir="rtl">
+  <li><strong>سجل الاتصالات</strong> (الخادم المستخدم، وقت الاتصال/قطع الاتصال، المدة، حجم البيانات): يتم تخزينه <strong>محليًا على جهازك فقط</strong>، ويمكنك مسحه في أي وقت من شاشة «السجل». لا يتم إرسال أي شيء إلى خوادمنا.</li>
+  <li><strong>التفضيلات</strong> (اللغة، وضع VPN، حظر الإعلانات، الخوادم المفضلة): تُخزَّن محليًا على جهازك.</li>
+  <li><strong>عناوين IP وحركة مرور الشبكة</strong>: تمر عناوين IP وحركة المرور عبر نفق VPN إلى الخوادم التي تتصل بها. يطبق DNIRVPN سياسة <strong>بدون سجلات (no-logs)</strong>: لا يتم تسجيل أو تحليل أو مشاركة محتوى حركة المرور أو عنوان IP الخاص بك.</li>
+  <li><strong>لا يوجد حساب</strong>: لا يُطلب أي تسجيل، ولا بريد إلكتروني، ولا رقم هاتف.</li>
+</ul>
+
+<h3 dir="rtl">2. الأذونات المستخدمة</h3>
+<ul dir="rtl">
+  <li><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code> / <code>ACCESS_WIFI_STATE</code>: لإنشاء اتصال VPN ومراقبته.</li>
+  <li><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SYSTEM_EXEMPTED</code>: لإبقاء النفق نشطًا في الخلفية.</li>
+  <li><code>POST_NOTIFICATIONS</code>: لعرض إشعار حالة VPN.</li>
+  <li><code>RECEIVE_BOOT_COMPLETED</code>: لاستعادة الاتصال بعد إعادة تشغيل الجهاز، إذا طلبت ذلك.</li>
+</ul>
+
+<h3 dir="rtl">3. التخزين والأمان</h3>
+<p dir="rtl">تُحفظ بيانات التطبيق في قاعدة بيانات محلية على جهازك، محمية ببيئة النظام الآمنة (الحماية المعزولة وتشفير الجهاز). يقوم نفق VPN بتشفير اتصالك أثناء النقل. لا يتم إرسال أي بيانات سجل إلى أي خادم تابع لجهة خارجية.</p>
+
+<h3 dir="rtl">4. مشاركة البيانات</h3>
+<p dir="rtl">لا يبيع DNIRVPN ولا يؤجر ولا يكشف بياناتك الشخصية، إلا إذا تطلب القانون ذلك أو بموجب طلب قانوني مصرح به.</p>
+
+<h3 dir="rtl">5. الاحتفاظ بالبيانات وحذفها</h3>
+<p dir="rtl">تبقى البيانات المحلية على جهازك. يمكنك مسح سجل الاتصالات في أي وقت من داخل التطبيق، أو إلغاء تثبيت التطبيق لحذف جميع البيانات المخزنة محليًا.</p>
+
+<h3 dir="rtl">6. حقوق المستخدم</h3>
+<p dir="rtl">وفقًا للتشريعات المعمول بها، لديك حق الوصول إلى بياناتك وتصحيحها ومحوها. وبما أن التطبيق لا يجمع أي بيانات شخصية عبر خوادمه، فإن جميع بياناتك تبقى تحت سيطرتك المباشرة على جهازك.</p>
+
+<h3 dir="rtl">7. الاتصال</h3>
+<p dir="rtl">لأي استفسار حول هذه السياسة: <a href="mailto:forbello6@gmail.com">forbello6@gmail.com</a></p>
+
 </body>
 </html>
